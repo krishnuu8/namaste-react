@@ -4,7 +4,8 @@
   "description": "React code and Practise ",
 
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start":"parcel index.html"
   },
   "keywords": [
     "react",
