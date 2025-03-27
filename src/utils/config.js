@@ -1,0 +1,3 @@
+export const LOGO_URL="https://img.pikbest.com/png-images/20241031/black-and-red-line-style-fast-food-restaurant-logo_11033328.png!sw800";
+export const SEARCH_LOGO_URL= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75SELy7I8F_vR2KQwSl9kI92TgoGW26UtSA&s";
+export const MENU_URL="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.6568198&lng=74.8643368&restaurantId=";
