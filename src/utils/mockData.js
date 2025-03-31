@@ -1928,7 +1928,7 @@ const resList= [
     }
   ]
   export default resList;
-  // console.log(extractedData)
+  
 // const updatedData = extractedData.map((restaurant) => ({
 //     ...restaurant, // Spread existing restaurant properties
 //     info: {

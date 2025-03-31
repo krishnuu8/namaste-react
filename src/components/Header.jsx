@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 import { LOGO_URL,SEARCH_LOGO_URL } from "../utils/config"; 
 import Search from "./Search";
 import { Link } from "react-router-dom";
 const Header=()=>{
     const [btnText,setBtnText]=useState("Login");
-    useEffect(()=>{
-        console.log("Header fully rendered!")
-    },[])
+
+    const cartItems=useSelector((store)=>store.cart?.items)
+    console.log(cartItems)
     return(
         <>
         <div className="flex justify-between bg-pink-100 shadow-lg">
@@ -16,9 +17,9 @@ const Header=()=>{
             <div className="flex items-center">
         <ul className="flex p-4 m-4">
             <li className="px-4"><Link to="/">Home</Link></li>
-            <li className="px-4"><Link>Menu</Link></li>
             <li className="px-4"><Link to="/about">About</Link></li>
             <li className="px-4"><Link to="/contact">Contact</Link></li>
+            <li className="px-4"><Link to="/cart">Cart - ({cartItems.length} items)</Link></li>
             <li className="px-4"><Link to="/grocery">Grocery</Link></li>
             <li className="px-4"><button 
             className="login"

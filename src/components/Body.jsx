@@ -1,5 +1,4 @@
-import RestrauntCard from "./RestrauntCard";
-import resList from "../utils/mockData";
+import RestrauntCard,{withPromotedLabel} from "./RestrauntCard";
 import ShimmerList from "./Shimmer";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,11 +7,10 @@ const Body=()=>{
    let [data,setData]=useState([])
     let [search,showSearch]=useState(false)
     let [searchData,setSearchData]=useState("")
-    // const onlineStatus=useOnlineStatus()
-    // if(onlineStatus===false) <h1 className="offline">LOOKS LIKE YOUR CONNECTION IS LOST!PLEASE CONNECT TO INTERNET!!</h1>
     useEffect(()=>{
         fetchData();
     },[])
+    const RestaurantCardPromoted=withPromotedLabel(RestrauntCard);
 
  const fetchData=async ()=>{
  const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.6568198&lng=74.8643368&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
@@ -70,7 +68,7 @@ if(data.length===0) return <ShimmerList/>
         <div className="flex flex-wrap overflow-visible">
          {
             data.map((restraunt)=>{
-             return(<Link  key={restraunt.info.id} to={"/menu/"+restraunt.info.id}><RestrauntCard resData={restraunt}/></Link>  )
+             return(<Link  key={restraunt.info.id} to={"/menu/"+restraunt.info.id}>{<RestrauntCard resData={restraunt}/>}</Link>  )
             })
 
          }
